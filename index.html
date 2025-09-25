@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site profissional em 7 dias por R$ 2.500. Felipe Lemes já entregou 25+ projetos que faturam de verdade. Pare de perder vendas. Reserve sua vaga hoje.">
+  <meta name="keywords" content="desenvolvedor web, sites profissionais, desenvolvimento web, Felipe Lemes, full stack developer">
+  <meta name="author" content="Felipe Lemes">
+  <title>Felipe Lemes | Desenvolvedor Full Stack Especialista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Variáveis CSS - Paleta Extraída das Imagens do Felipe */
+    :root {
+      --primary: #1a2332;        /* Navy profundo do contraste */
+      --primary-dark: #0f1a26;   /* Navy ainda mais escuro */
+      --primary-light: #2d3b4f;  /* Navy mais claro */
+      --secondary: #c4966f;      /* Caramelo elegante do blazer */
+      --secondary-dark: #b8865d; /* Caramelo mais escuro */
+      --secondary-light: #d4af7a; /* Dourado sutil do relógio */
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --light-bg: #f8f9fa;
+      --dark-text: #2d2d2d;      /* Cinza carvão */
+      --gray-text: #6c757d;
+      --light-text: #f5f5f5;     /* Cinza claro */
+      --card-bg: #ffffff;
+      --glass-bg: rgba(255,255,255,0.8);
+      --glass-border: rgba(255,255,255,0.2);
+      --liquid-glass-shadow: 0 8px 32px rgba(26,35,50,0.12);
+      --button-shadow: 0 8px 20px rgba(196,150,111,0.3);
+      --header-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --border-radius: 16px;
+      --glass-blur: blur(20px);
+    }
+
+    /* Reset e Configurações Básicas - Estilo Apple */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: var(--dark-text);
+      background-color: var(--light-bg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'SF Pro Display', 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .container {
+      width: min(92%, 1200px);
+      margin: 0 auto;
+    }
+
+    /* Header Liquid Glass - Estilo Apple 2025 */
+    header {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: var(--header-shadow);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--secondary);
+    }
+
+    .logo-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-text h1 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: rgba(196,150,111,0.1);
+      color: var(--secondary-dark);
+      transform: translateY(-1px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .mobile-toggle:hover {
+      background: rgba(196,150,111,0.1);
+    }
+
+    /* Hero Section - Minimalismo Apple */
+    .hero {
+      background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(196,150,111,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      max-width: 800px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-greeting {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-highlight {
+      color: var(--secondary);
+      position: relative;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray-text);
+      max-width: 550px;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray-text);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Botões - Liquid Glass Apple Style */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      border-radius: var(--border-radius);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      box-shadow: var(--liquid-glass-shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26,35,50,0.2);
+    }
+
+    .btn-secondary {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      color: var(--primary);
+      border: 1px solid var(--glass-border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(196,150,111,0.1);
+      transform: translateY(-2px);
+      border-color: var(--secondary);
+    }
+
+    /* Seções */
+    section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-text);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Seção Sobre */
+    .about-section {
+      background: var(--white);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-photo {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: var(--liquid-glass-shadow);
+      transition: var(--transition);
+      object-fit: cover;
+      height: 500px;
+    }
+
+    .about-photo:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(26,35,50,0.15);
+    }
+
+    /* Hero limpo sem imagem de background */
+    .hero-clean {
+      background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+      color: var(--dark-text);
+    }
+
+    .hero-clean h1 {
+      color: var(--primary);
+    }
+
+    .hero-clean .hero-highlight {
+      color: var(--secondary);
+    }
+
+    .hero-clean p {
+      color: var(--gray-text);
+    }
+
+    .hero-clean .hero-greeting {
+      color: var(--secondary);
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .experience-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .highlight-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--glass-border);
+      transition: var(--transition);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--liquid-glass-shadow);
+    }
+
+    .highlight-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Seção Serviços */
+    .services-section {
+      background: var(--light-bg);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--liquid-glass-shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(26,35,50,0.12);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+      border-radius: 20px;
+      margin-bottom: 2rem;
+    }
+
+    .service-icon i {
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .service-description {
+      color: var(--gray-text);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .service-features {
+      margin-top: 1.5rem;
+    }
+
+    .service-features li {
+      margin-bottom: 0.8rem;
+      padding-left: 2rem;
+      position: relative;
+      color: var(--gray-text);
+    }
+
+    .service-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* Seção Oferta */
+    .offer-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 80%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(196,150,111,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .offer-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .offer-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 32px;
+      padding: 4rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: var(--liquid-glass-shadow);
+      color: var(--primary);
+    }
+
+    .offer-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+      color: var(--white);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+    }
+
+    .offer-title {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .offer-pricing {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .original-price {
+      font-size: 2rem;
+      color: var(--gray-text);
+      text-decoration: line-through;
+      font-weight: 400;
+    }
+
+    .current-price {
+      font-size: 4rem;
+      color: var(--secondary);
+      font-weight: 800;
+    }
+
+    .price-caption {
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      color: var(--gray-text);
+    }
+
+    .offer-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+      text-align: left;
+    }
+
+    .offer-features li {
+      padding-left: 2rem;
+      position: relative;
+      color: var(--gray-text);
+    }
+
+    .offer-features li i {
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: var(--secondary);
+    }
+
+    /* Seção Portfolio */
+    .portfolio-section {
+      background: var(--white);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--liquid-glass-shadow);
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(26,35,50,0.12);
+    }
+
+    .portfolio-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-image i {
+      font-size: 3rem;
+      color: var(--white);
+    }
+
+    .portfolio-content {
+      padding: 2rem;
+    }
+
+    .portfolio-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* CTA Final */
+    .cta-section {
+      background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .cta-text {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: var(--gray-text);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: var(--light-text);
+      padding: 80px 0 40px;
+    }
+
+    .footer-content {
+      text-align: center;
+    }
+
+    .footer-logo {
+      margin-bottom: 2rem;
+    }
+
+    .footer-logo h3 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: rgba(196,150,111,0.1);
+      border-radius: 50%;
+      color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--secondary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+      margin-top: 2rem;
+    }
+
+    /* Animações */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Media Queries - Responsividade Apple */
+    @media (max-width: 1024px) {
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+
+      .experience-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 90px);
+        flex-direction: column;
+        background: var(--glass-bg);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        padding: 2rem;
+        transition: var(--transition);
+        border-right: 1px solid var(--glass-border);
+      }
+
+      nav ul.active {
+        left: 0;
+      }
+
+      nav ul li {
+        margin: 1rem 0;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 140px 0 80px;
+      }
+
+      .hero-stats {
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .hero-cta {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-pricing {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .offer-features {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .offer-card {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo-container">
+        <div class="logo-photo">
+          <img src="felipe-foto-2.png" alt="Felipe Lemes">
+        </div>
+        <div class="logo-text">
+          <h1>Felipe Lemes</h1>
+          <p>Desenvolvedor Full Stack</p>
+        </div>
+      </div>
+      <button class="mobile-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#oferta">Oferta</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero hero-clean">
+    <div class="container hero-content">
+      <h1>Seu Concorrente Já Tem um Site que <span class="hero-highlight">Converte</span>. E Você?</h1>
+      <p>Enquanto você pensa, seu cliente está comprando do seu concorrente. Garanta seu site profissional em 7 dias e pare de perder vendas. Já entreguei 25+ projetos que faturam de verdade.</p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">25+</span>
+          <span class="stat-label">Projetos Faturando</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">SaaS em 25 Dias</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">7</span>
+          <span class="stat-label">Dias Para Entregar</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#oferta" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> Quero Parar de Perder Vendas
+        </a>
+        <a href="#portfolio" class="btn btn-secondary">
+          <i class="fas fa-eye"></i> Ver Resultados Reais
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Section -->
+  <section id="sobre" class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="felipe-foto-1.jpg" alt="Felipe Lemes - Desenvolvedor Full Stack" class="about-photo">
+        </div>
+        <div class="about-text">
+          <h3>Por Que Empresas Inteligentes Me Escolhem</h3>
+          <p>Não sou apenas mais um desenvolvedor. Sou o profissional que entrega em 7 dias o que outros levam meses. Criei 2 SaaS completos em apenas 25 dias - algo que desenvolvedores seniores levam 6 meses para fazer.</p>
+          <p>Meu foco? Sites que vendem. Não faço sites bonitos que não convertem. Cada linha de código é pensada para transformar visitantes em clientes pagantes. Se você quer presença digital que gera resultado, encontrou o parceiro certo.</p>
+
+          <div class="experience-highlights">
+            <div class="highlight-card">
+              <span class="highlight-number">100%</span>
+              <p>Clientes Fechando Mais Vendas</p>
+            </div>
+            <div class="highlight-card">
+              <span class="highlight-number">25</span>
+              <p>Dias Para 2 SaaS Completos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços Section -->
+  <section id="servicos" class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Soluções Que Fazem Seu Negócio Faturar Mais</h2>
+        <p class="section-subtitle">Não faço apenas sites. Crio máquinas de vendas online que trabalham 24/7 para você</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="service-title">Sites Que Vendem Enquanto Você Dorme</h3>
+          <p class="service-description">Seu site trabalhando como seu melhor vendedor, 24 horas por dia, conquistando clientes no automático.</p>
+          <ul class="service-features">
+            <li>Design responsivo e moderno</li>
+            <li>Otimização para SEO</li>
+            <li>Integração com redes sociais</li>
+            <li>Formulários de contato</li>
+            <li>Dashboard administrativo</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="service-title">SaaS Que Gera Receita Recorrente</h3>
+          <p class="service-description">Transforme sua ideia em um negócio escalável. Sistemas completos que faturam todo mês no piloto automático.</p>
+          <ul class="service-features">
+            <li>Arquitetura escalável</li>
+            <li>Painel administrativo completo</li>
+            <li>Sistema de usuários e permissões</li>
+            <li>Integrações com APIs</li>
+            <li>Banco de dados otimizado</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="service-title">Multiplicador de Conversões</h3>
+          <p class="service-description">Seu site já existe mas não vende? Transformo visitantes perdidos em clientes pagantes com otimizações estratégicas.</p>
+          <ul class="service-features">
+            <li>Auditoria completa de performance</li>
+            <li>Otimização de velocidade</li>
+            <li>Melhoria da experiência do usuário</li>
+            <li>Implementação de analytics</li>
+            <li>Testes A/B para conversões</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Resultados Que Falam Por Si</h2>
+        <p class="section-subtitle">Cada projeto = Um cliente faturando mais. Veja alguns dos 25+ cases de sucesso</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <i class="fas fa-store"></i>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">R$ 180 mil em 3 meses</h3>
+            <p>Plataforma completa de vendas online com carrinho, pagamentos e dashboard administrativo.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">300 Assinantes em 60 dias</h3>
+            <p>Sistema de gerenciamento empresarial com múltiplos usuários e relatórios avançados.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">5x Mais Leads Qualificados</h3>
+            <p>Websites profissionais para empresas de diversos segmentos, focados em conversão.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Oferta Section -->
+  <section id="oferta" class="offer-section">
+    <div class="container offer-container">
+      <div class="offer-card">
+        <span class="offer-badge">Últimas 3 Vagas</span>
+        <h2 class="offer-title">Sua Última Chance de Pagar 50% Menos</h2>
+
+        <div class="offer-pricing">
+          <span class="original-price">R$ 5.000</span>
+          <span class="current-price">R$ 2.500</span>
+        </div>
+
+        <p class="price-caption">Hoje você economiza R$ 2.500 | Amanhã pode ser tarde demais</p>
+
+        <ul class="offer-features">
+          <li><i class="fas fa-check-circle"></i> Site que vende em qualquer dispositivo</li>
+          <li><i class="fas fa-check-circle"></i> Todas as páginas necessárias para converter</li>
+          <li><i class="fas fa-check-circle"></i> Primeira página do Google garantida</li>
+          <li><i class="fas fa-check-circle"></i> Seus clientes te encontram em todos os canais</li>
+          <li><i class="fas fa-check-circle"></i> Leads direto no seu WhatsApp</li>
+          <li><i class="fas fa-check-circle"></i> Você no controle total, sem depender de ninguém</li>
+          <li><i class="fas fa-check-circle"></i> 1 mês de suporte VIP incluído</li>
+          <li><i class="fas fa-check-circle"></i> Online e faturando em menos de 1 semana</li>
+        </ul>
+
+        <div style="margin-top: 3rem;">
+          <a href="https://wa.me/5512996512358" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> Garantir Minha Vaga Com 50% OFF
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contato" class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Cada Dia Sem Site = Dinheiro Perdido</h2>
+      <p class="cta-text">Enquanto você lê isso, seu concorrente está fechando vendas online. Restam apenas 3 vagas com 50% de desconto. Amanhã pode ser tarde demais.</p>
+      <a href="https://wa.me/5512996512358" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Reservar Meu Site Agora
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <h3>Felipe Lemes</h3>
+        <p>Desenvolvedor que entrega resultados, não apenas código. 25+ empresas já faturam mais graças aos sites que desenvolvi.</p>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://wa.me/5512996512358" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Felipe Lemes - Desenvolvedor Full Stack. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('#nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Active Menu on Scroll - Apple Style
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    function updateActiveMenu() {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveMenu);
+
+    // Smooth Scrolling - Enhanced
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          const headerHeight = 120;
+          const targetPosition = targetElement.offsetTop - headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+
+          // Close mobile menu if open
+          if (navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+          }
+        }
+      });
+    });
+
+    // Header Background on Scroll - Apple Glass Effect
+    const header = document.querySelector('#header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(255, 255, 255, 0.9)';
+        header.style.backdropFilter = 'blur(20px)';
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.8)';
+        header.style.backdropFilter = 'blur(20px)';
+      }
+    });
+
+    // Intersection Observer for Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for animations
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Parallax Effect for Hero Section
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.hero::before');
+
+      parallaxElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+  </script>
+</body>
+</html>
